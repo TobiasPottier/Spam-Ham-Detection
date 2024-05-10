@@ -1,0 +1,1 @@
+In this repository is also a Dockerfile. As of now, you can just pull the image from docker hub instead of using this Dockerfile (tobiaspottier/spamhamdet:latest). Included is also a K8s folder with the required yaml file if you would like to set this up in Kubernetes.
