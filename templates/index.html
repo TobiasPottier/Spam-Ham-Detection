@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Detection</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="icon" sizes="16x16" href="{{ url_for('static', filename='favicon-16x16.png') }}">
+    <link rel="icon" sizes="32x32" href="{{ url_for('static', filename='favicon-32x32.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-size: 30px;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        input[type="text"], button {
+            padding: 10px;
+            color: green;
+            margin-top: 20px;
+            font-size: 16px;
+            width: 300px;
+        }
+        button {
+            cursor: pointer;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Spam Detection</h1>
+    <form action="/submit" method="post">
+        <input type="text" name="sentence" placeholder="Enter a sentence to check for spam" required>
+        <button type="submit">Check</button>
+    </form>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>
